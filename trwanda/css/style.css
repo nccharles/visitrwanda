@@ -14,9 +14,9 @@
     rgba(10, 138, 10, 0.2),
     rgba(233, 250, 0, 0.1));
     --trans_gradient: linear-gradient(45deg, 
-    rgba(11, 176, 241, 0.6),
-    rgba(10, 138, 10, 0.3),
-    rgba(233, 250, 0, 0.6));
+    rgba(11, 176, 241, 0.2),
+    rgba(10, 138, 10, 0.2),
+    rgba(233, 250, 0, 0.2));
 }
 body {
     font-family: 'Open Sans', sans-serif;
@@ -42,7 +42,7 @@ html {
 }
 .header {
     height: 100vh;
-    background-image: var(--trans_gradient),
+    background-image: 
    url('http://rdb.rw/demo2/tourism/wp-content/uploads/2018/01/utb_1396876608Z.jpg');
     background-size: cover;
     background-position: top;
@@ -344,7 +344,7 @@ nav ul li a {
     padding: 18px;
     font-family: "Open Sans";
     text-transform:uppercase;
-    color: var(--primary_blue);
+    color: var(--main_white);
     font-size: 18px;
     text-decoration: none;
     display: block;
