@@ -1,0 +1,16 @@
+{
+  "name": "rwanda",
+  "version": "1.0.0",
+  "description": "Welcome to Rwanda tourism",
+  "main": "index.js",
+  "scripts": {
+    "test": "yarn start"
+  },
+  "author": "Charles",
+  "license": "ISC",
+  "dependencies": {
+    "path": "^0.12.7",
+    "express": "^4.14.0",
+    "pg": "^6.0.1"
+  }
+}
