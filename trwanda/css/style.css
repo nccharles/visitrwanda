@@ -1,3 +1,4 @@
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:300,400,700);
 :root {
     --primary_blue: #009AF4;
     --primary_green: #1C8F31;
@@ -8,19 +9,26 @@
     #009AF4,
     #1C8F31,
     #EFEF00);
+    --nav_gradient: linear-gradient(180deg, 
+    #009AF4,
+    rgba(10, 138, 10, 0.2),
+    rgba(233, 250, 0, 0.1));
     --trans_gradient: linear-gradient(45deg, 
     rgba(11, 176, 241, 0.6),
     rgba(10, 138, 10, 0.3),
     rgba(233, 250, 0, 0.6));
 }
 body {
-    font-family: 'Lato', sans-serif;
+    font-family: 'Open Sans', sans-serif;
     font-weight: 400;
     font-size: 16px;
     line-height: 1.7;
     color: var(--light_glay);
     background: var(--main_gradient);
     margin: 0
+}
+h2{
+    color: var(--primary_yellow)
 }
 html {
     scroll-behavior: smooth;
@@ -42,14 +50,8 @@ html {
     clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
 }
 
-.brand-box {
-    position: absolute;
-    top: 40px;
-    left: 40px;
-}
-
 .logo{
-width: 100px;
+width: 80px;
  height: auto; 
 }
 
@@ -291,3 +293,89 @@ width: 100px;
     }
   }
   
+
+.headline:after {
+  position: absolute;
+  content: '';
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(17, 17, 17, 0.5);
+}
+.inner {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  opacity: 0;
+  z-index: 10;
+  transform: translateX(-50%) translateY(-50%);
+  animation: fade-in 0.75s 0.25s ease-in forwards;
+}
+.inner h1 {
+  margin: 0;
+  font-size: 4em;
+  line-height: 1.2em;
+}
+.inner p {
+  margin: 0;
+  font-size: 1.4em;
+  font-style: italic;
+  font-family: serif;
+}
+nav {
+  position: fixed;
+  width: 100%;
+  z-index: 30;
+}
+nav.scrolled {
+  background-image: var(--nav_gradient),
+  url('http://rdb.rw/demo2/tourism/wp-content/uploads/2018/01/kgl-copy-5782936602-1cee6f8a33.jpg');
+  
+}
+nav ul {
+  float: right;
+  list-style: none;
+  padding: 25px;
+  margin: 0;
+}
+nav li {
+  float: left;
+}
+nav a {
+  font-size: 0.9em;
+  color: #fff;
+  text-decoration: none;
+  margin: 5px 0 0 20px;
+  display: block;
+}
+nav a:hover {
+  color: #ededed;
+}
+.brand-box {
+  height: 75px;
+  float: left;
+}
+.brand-box:before, .brand-box:after {
+  position: absolute;
+  font-size: 7em;
+  font-weight: 300;
+  line-height: 0;
+  color: #fff;
+  top: 25px;
+}
+.brand-box:before {
+  left: 20px;
+}
+.brand-box:after {
+  left: 34px;
+}
+
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
