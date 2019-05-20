@@ -190,12 +190,15 @@ width: 80px;
     font-family: FontAwesome;
     content: "\f02b";
     margin-right: 10px;
+    text-decoration: none
   }
   .blog-card .details .tags li {
     margin-right: 2px;
+    text-decoration: none
   }
   .blog-card .details .tags li:first-child {
     margin-left: -4px;
+    text-decoration: none
   }
   .blog-card .description {
     padding: 1rem;
@@ -401,4 +404,18 @@ nav.scrolled {
         url('http://rdb.rw/demo2/tourism/wp-content/uploads/2018/01/kgl-copy-5782936602-1cee6f8a33.jpg');
         
       }
+      body{
+        background: var(--main_white);
+      }
+      nav {
+        display: none;
+      }
+      .header {
+        display: none
+      }
+      .brand-box{
+        display: none
+      }
+    
+    
 }
