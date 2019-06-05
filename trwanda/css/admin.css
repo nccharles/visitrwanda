@@ -1,0 +1,451 @@
+@import "compass/css3";
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:300,400,700);
+:root {
+    --primary_blue: #009AF4;
+    --primary_green: #1C8F31;
+    --primary_yellow:#EFEF00;
+    --main_white: #FFFFFF;
+    --light_glay: #555;
+    --main_gradient: linear-gradient(45deg, 
+    #009AF4,
+    #1C8F31,
+    #EFEF00);
+    --panel_gradient: linear-gradient(90deg, 
+    #009AF4,
+    rgba(10, 138, 10, 0.2),
+    rgba(233, 250, 0, 0.1),#009AF4);
+    --nav_gradient: linear-gradient(180deg, 
+    #009AF4,
+    rgba(10, 138, 10, 0.2),
+    rgba(233, 250, 0, 0.1));
+    --trans_gradient: linear-gradient(45deg, 
+    rgba(11, 176, 241, 0.2),
+    rgba(10, 138, 10, 0.2),
+    rgba(233, 250, 0, 0.2));
+}
+* {
+  box-sizing: border-box;
+}
+body {
+  background: var(--panel_gradient);
+}
+body > div {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  width: 80%;
+  height: 50em;
+  min-width: 45em;
+  margin: auto;
+  display: flex;
+}
+nav {
+  width: 7em;
+  height: 100%;
+  text-align: center;
+  border-radius: 0.5rem;
+  background: var(--main_white);
+  margin-right: 1em;
+}
+nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+nav li {
+  flex: 1;
+  vertical-align: bottom;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-bottom: solid 1px #e3e3e3;
+}
+nav li:last-child {
+  border: none;
+}
+nav a {
+  color: var(--light_glay);
+  text-decoration: none;
+  font-weight: bold;
+}
+nav i[class*='icon-'] {
+  display: block;
+  font-size: 2em;
+  margin-bottom: 0.3em;
+}
+nav + div {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+div.top-bar {
+  display: flex;
+  height: 3em;
+  margin-bottom: 1em;
+}
+div.top-bar > div {
+  width: 24em;
+  display: flex;
+  margin-right: 1em;
+  background: var(--main_white);
+  border-radius: 0.5rem;
+  color: var(--light_glay);
+  font-weight: bold;
+}
+div.top-bar > div div {
+  flex: 1;
+  min-width: 12em;
+}
+div.top-bar > div button {
+  display: block;
+  width: 3em;
+  color: var(--light_glay);
+  border: none;
+  border-left: solid 1px #e3e3e3;
+  background: transparent;
+}
+div.top-bar > button {
+  display: block;
+  width: 7em;
+  text-transform: uppercase;
+  font-weight: bold;
+  border-radius: 0.5rem;
+  border: none;
+  background: var(--main_gradient);
+  color: var(--main_white);
+}
+div.top-bar > button i {
+  display: none;
+}
+div.top-bar img {
+  height: 2em;
+  margin: 0.5em;
+  border-radius: 0.25rem;
+  vertical-align: middle;
+}
+form.search {
+  border-radius: 0.5rem;
+  background: var(--main_white);
+  height: 3em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 1em;
+  flex: 1;
+  min-width: 10em;
+}
+form.search input {
+  box-sizing: border-box;
+  flex: 1;
+  border: none;
+  margin: none;
+  padding: 0.5em;
+  height: 100%;
+  background: transparent;
+  color: var(--light_glay);
+  font-weight: bold;
+}
+form.search button {
+  width: 3em;
+  height: 100%;
+  background: transparent;
+  border: none;
+  color: var(--light_glay);
+}
+div.page {
+  flex: 1;
+  display: flex;
+
+}
+aside {
+  display: flex;
+  flex-direction: column;
+  width: 15em;
+}
+[id="main"] {
+  flex: 1;
+  margin-right: 1em;
+  background: var(--main_white);
+  border-radius: 0.5rem;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  min-height: 30em;
+}
+[id="main"] h1 {
+  position: absolute;
+  top: 1em;
+  left: 1em;
+  font-size: 1em;
+  margin: 0;
+  color: var(--main_white);
+}
+canvas {
+  background: var(--nav_gradient);
+  width: 100%;
+  border-radius: 0.5rem 0.5rem 0 0;
+  max-height: 8em;
+}
+canvas + h2 {
+  height: 2em;
+  background: var(--primary_green);
+  margin: 0;
+  padding: 0.4em 1em;
+  font-size: 1em;
+  font-weight: bold;
+  color: var(--main_white);
+}
+canvas + h2 a {
+  float: right;
+  text-decoration: none;
+  color: var(--main_white);
+}
+.widget {
+  background: var(--main_white);
+  border-radius: 0.5rem;
+  padding-bottom: 1rem;
+  margin-bottom: 1em;
+}
+.widget header {
+  background: #7d7d7d;
+  border-radius: 0.5rem 0.5rem 0 0;
+  color: var(--main_white);
+  position: relative;
+}
+.widget header:after {
+  content: '';
+  border-top: solid 0.5rem #7d7d7d;
+  border-right: solid 0.5rem transparent;
+  border-bottom: solid 0 transparent;
+  border-left: solid 0.5rem transparent;
+  position: absolute;
+  bottom: -0.5rem;
+  left: 1rem;
+}
+.widget h2 {
+  font-size: 1rem;
+  margin: 0;
+  padding: 1rem;
+}
+.widget p {
+  margin: 0 1rem;
+}
+.widget.featured {
+  background: var(--main_gradient);
+  color: var(--main_white);
+}
+.widget.featured p {
+  font-weight: bold;
+  font-size: 2em;
+}
+.widget menu {
+  list-style: none;
+  margin: 0 0 -1rem 0;
+  padding: 0;
+}
+.widget menu a {
+  display: block;
+  text-decoration: none;
+  color: var(--light_glay);
+  font-weight: bold;
+  padding: 0.7rem 1rem;
+}
+.widget menu li {
+  border-bottom: solid 1px #e3e3e3;
+}
+.widget menu li:last-child {
+  border: none;
+}
+.widget menu i[class*="icon-"] {
+  float: right;
+}
+form.widget {
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 0.5em;
+}
+form.widget header {
+  background: var(--primary_green);
+  margin-bottom: 0.5em;
+}
+form.widget header:after {
+  border-top-color: var(--primary_green) !important;
+}
+form.widget input, form.widget textarea {
+  margin: 0.5em 1em;
+  border: 1px solid #e3e3e3;
+  padding: 0.5em;
+  border-radius: 0.25rem;
+  color: var(--light_glay);
+  font-weight: bold;
+}
+form.widget button[type="submit"] {
+  margin: 0.5em 1em;
+  border: none;
+  float: right;
+  padding: 0.5em;
+  font-size: 1em;
+  font-weight: bold;
+  color: var(--main_white);
+  background: var(--primary_green);
+  border-radius: 0.25rem;
+}
+/* form */
+  
+  fieldset {
+    position: relative;
+    border: none;  
+  }
+  
+  fieldset label {
+    position: absolute;  
+    top: 18px;
+    color: rgba(0, 0, 0, 0.3);
+    transform-origin: left;
+    transition: all 0.3s ease;
+  }
+  
+  fieldset input:focus ~ label {
+    color: var(--primary_green);  
+  }
+  
+  fieldset input:focus ~ label,
+  fieldset input:valid ~ label {
+    top: 0;
+    transform: scale(0.6, 0.6);
+  }
+  
+  fieldset input {
+    font-size: 20px;  
+    width: 100%;
+    border: none;  
+    margin-top: 10px;
+  }
+  
+  fieldset input:focus {
+    outline: none;
+  }
+  
+  .after {
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(to right, var(--primary_green) 50%, transparent 50%);
+    background-color: rgba(0, 0, 0, 0.3);
+    background-size: 200% 100%;
+    background-position: 100% 0;
+    transition: all 0.6s ease;
+  }
+  
+  fieldset input:focus ~ .after {
+    background-position: 0 0;
+  }
+  
+  fieldset button {
+    position: relative;
+    width: 100%;
+    font-size: 20px;  
+    font-family: system-ui, Helvetica, Arial, sans-serif;
+    line-height: 1.5;
+    margin-top: 20px;
+    padding: 2px 10px;
+    color: rgba(0, 0, 0, 0.4);
+    background: white;
+    border: none;
+    background: linear-gradient(to right, var(--primary_green) 50%, transparent 50%);
+    background-color: rgba(0, 0, 0, 0.3);
+    background-size: 200% 100%;
+    background-position: 100% 0;
+    transition: all 0.6s ease;
+  }
+  
+  fieldset button:before {
+    position: absolute;
+    content: "Add";
+    top: 2px;
+    bottom: 2px;
+    left: 2px;
+    right: 2px;
+    display: block;
+    background-color: white;
+  }
+  
+  fieldset button:active,
+  fieldset button:focus,
+  fieldset button:hover {
+    outline: none;
+    background-position: 0 0;
+    color: var(--primary_green);
+  }
+@media (max-width: 45em) {
+  body > div {
+    min-width: 15em;
+    flex-direction: column;
+  }
+  nav {
+    width: 100%;
+    height: 14em;
+    margin-bottom: 1em;
+    margin-right: 0;
+  }
+  nav ul {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+  nav li {
+    min-width: 7em;
+    flex: 1;
+  }
+  div.top-bar > div div {
+    min-width: 3em;
+  }
+  div.top-bar > div button {
+    min-width: 3em;
+  }
+  div.top-bar > button {
+    width: 3em;
+    min-width: 3em;
+  }
+  div.top-bar > button i {
+    display: inline;
+  }
+  form.search {
+    min-width: 3em;
+  }
+  form.search input {
+    max-width: 0;
+    margin: 0;
+    padding: 0;
+  }
+  div.page {
+    flex-direction: column;
+  }
+  aside {
+    display: block;
+    width: 100%;
+  }
+  [id="main"] {
+    margin-right: 0;
+    margin-bottom: 1em;
+  }
+  .desktop {
+    display: none;
+  }
+}
+@media (max-width: 36em) {
+  nav {
+    height: 21em;
+  }
+  .tablet {
+    display: none;
+  }
+}
+@media (max-width: 27.5em) {
+  nav {
+    height: 28em;
+  }
+}

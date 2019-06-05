@@ -1,6 +1,6 @@
 window.addEventListener('scroll', function() {
 console.log(window.scrollY)
-if(window.scrollY>=100){
+if(window.scrollY>50){
     // document.querySelector("scrolled").style.display='block'
     document.querySelector('#scrolled').classList.add('scrolled')
 }else{

@@ -24,7 +24,7 @@ body {
     font-size: 16px;
     line-height: 1.7;
     color: var(--light_glay);
-    background: var(--main_gradient);
+    background: var(--main_white);
     margin: 0
 }
 h2{
@@ -41,9 +41,9 @@ html {
     margin: 0;
 }
 .header {
-    height: 100vh;
+    height: 80vh;
     background-image: 
-   url('http://rdb.rw/demo2/tourism/wp-content/uploads/2018/01/utb_1396876608Z.jpg');
+   url('https://i2.wp.com/www.gorillatrips.net/wp-content/uploads/2015/10/kigali-city.jpg?resize=896%2C400&ssl=1');
     background-size: cover;
     background-position: top;
     position: relative;
@@ -260,6 +260,96 @@ width: 80px;
   .blog-card:hover .details {
     left: 0%;
   }
+  /* drop down */
+  nav {
+    position: fixed;
+    z-index: 30;
+    width: 100%;
+    mask-image: linear-gradient(90deg, rgba(255, 255, 255, 0) 0%, #ffffff 25%, #ffffff 75%, rgba(255, 255, 255, 0) 100%);
+    margin: 0 auto;
+    padding: 10px 0 0px 0;
+  }
+  nav .container {
+    padding: 10px;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+  nav .container .logo img {
+    height: 65px;
+    width: auto;
+  }
+  nav .container .main-menu ul {
+    list-style-type: none;
+    display: flex;
+    flex-direction: row;
+    color: var(--main_white);
+    margin: 0;
+    padding: 0;
+  }
+  nav .container .main-menu ul li {
+    display: flex;
+    align-items: center;
+  }
+  nav .container .main-menu ul li.dropdown {
+    cursor: pointer;
+  }
+  nav .container .main-menu ul li a, nav .container .main-menu ul li .dropdown-active {
+    padding: 27px 15px;
+    font-size: 16px;
+    text-decoration: none;
+    color: var(--main_white);
+  }
+  nav .container .main-menu ul li a i.fas, nav .container .main-menu ul li .dropdown-active i.fas {
+    margin-right: 8px;
+  }
+  nav .container .main-menu ul li a i.fa-caret-down, nav .container .main-menu ul li .dropdown-active i.fa-caret-down {
+    margin-left: 4px;
+  }
+  nav .container .main-menu ul li.dropdown {
+    position: relative;
+  }
+  nav .container .main-menu ul li.dropdown #dropdown-menu {
+    height: 0;
+    padding: 0;
+    margin: 0;
+    visibility: hidden;
+    background: var(--primary_blue);
+    display: none;
+    border: 1px solid rgba(0, 0, 0, .15);
+    width: 200px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, .175);
+    background-clip: padding-box;
+    border-bottom-right-radius: 34px;
+    border-bottom-left-radius: 34px;
+    overflow: hidden;
+    transition: all 0.2s ease-in-out;
+  }
+  nav .container .main-menu ul li.dropdown #dropdown-menu li a {
+    color: var(--main_white);
+    display: block;
+    padding: 16px 12px;
+    box-sizing: border-box;
+    background: transparent;
+    transition: background 0.2s ease-in-out;
+    width: 100%;
+  }
+  nav .container .main-menu ul li.dropdown #dropdown-menu li a:hover {
+    background: var(--main_white);
+    color: var(--primary_blue)
+  }
+  nav .container .main-menu ul li.dropdown:hover #dropdown-menu {
+    position: absolute;
+    top: 50px;
+    right: 10px;
+    height: auto;
+    visibility: visible;
+    display: block;
+  }
+  
+  /* drop down */
   @media (min-width: 640px) {
     .blog-card {
       flex-direction: row;
@@ -326,40 +416,12 @@ width: 80px;
   font-style: italic;
   font-family: serif;
 }
-nav {
-  position: fixed;
-  z-index: 30;
-  width: 100%;
-  mask-image: linear-gradient(90deg, rgba(255, 255, 255, 0) 0%, #ffffff 25%, #ffffff 75%, rgba(255, 255, 255, 0) 100%);
-  margin: 0 auto;
-  padding: 10px 0 0px 0;
-}
 
-nav ul {
-    text-align: center;
-    background: linear-gradient(90deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.2) 25%, rgba(255, 255, 255, 0.2) 75%, rgba(255, 255, 255, 0) 100%);
-    box-shadow: 0 0 25px rgba(0, 0, 0, 0.1), inset 0 0 1px rgba(255, 255, 255, 0.6);
-}
-nav ul li {
-    display: inline-block;
-}
-nav ul li a {
-    padding: 18px;
-    font-family: "Open Sans";
-    text-transform:uppercase;
-    color: var(--main_white);
-    font-size: 18px;
-    text-decoration: none;
-    display: block;
-  }
-nav a:hover {
-  color: var(--primary_yellow);
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1), inset 0 0 1px rgba(255, 255, 255, 0.6);
-  background: rgba(255, 255, 255, 0.1);
-}
 nav.scrolled {
     background:var(--main_gradient);
     padding: 10px 0 0px 0;
+    opacity: 0;
+    animation: fade-in 0.95s 0.50s ease-in forwards;
     
   }
 .brand-box {

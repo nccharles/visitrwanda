@@ -7,6 +7,6 @@ app.use(express.static(path.join(__dirname, "/trwanda")));
 // viewed at http://localhost:8088
 
 app.set('PORT', process.env.PORT || 8088);
-app.listen(app.get('PORT'), function(error) {
+app.listen(app.get('PORT'), ()=> {
     console.log('Server running at 8088');
 });
